@@ -4,6 +4,7 @@ node{
         def docker
         def dockerCMD
         def tagName = "3.0"
+        def dockerHubPwd = "Edureka@1992"
 
         stage('Preparation of Jenkins'){
           
@@ -59,7 +60,7 @@ node{
         stage("Push Docker Image to DockerHub"){
             
                 echo "Log into the dockerhub and Pushing image"
-                withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
+//                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
                 sh "${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
                 sh "${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
