@@ -17,7 +17,7 @@ node{
        stage('git checkout'){
          
                 echo "Checking out the code from git repository..."
-                git 'https://github.com/shubhamkushwah123/jenkins-integration.git'
+                git 'https://github.com/PoojaMishra084/Certificationproj1.git'
         }
            
 
@@ -53,15 +53,15 @@ node{
         stage('Build Docker Image'){
             
                 echo "Building docker image for application ..."
-                sh "${dockerCMD} build -t shubhamkushwah123/addressbook:${tagName} ."
+                sh "${dockerCMD} build -t poojamishra084/addressbook:${tagName} ."
         }
     
         stage("Push Docker Image to DockerHub"){
             
                 echo "Log into the dockerhub and Pushing image"
                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
-                sh "${dockerCMD} login -u shubhamkushwah123 -p ${dockerHubPwd}"
-                sh "${dockerCMD} push shubhamkushwah123/addressbook:${tagName}"
+                sh "${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
+                sh "${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
         }
     
