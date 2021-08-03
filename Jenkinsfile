@@ -10,7 +10,7 @@ node{
 
         registry = "PoojaMishra084/Certificationproj1" 
 
-        registryCredential = "devopslearner"
+        registryCredential = 'devopslearner'
 
         dockerImage = "poojamishra084/addressbook:${tagName}"
 
@@ -68,6 +68,9 @@ node{
         }
     
         stage("Push Docker Image to DockerHub"){
+                steps{
+                        script
+                            {
             
                 echo "Log into the dockerhub and Pushing image"
                 docker.withRegistry( '', registryCredential ) { 
@@ -76,6 +79,8 @@ node{
 //                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
 //                 sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
+        }
+          }
         }
     
         stage('Configure Server using Ansible'){
