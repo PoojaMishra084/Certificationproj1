@@ -8,11 +8,11 @@ node{
         
         environment { 
 
-        registry = "poojamishra084/sample" 
+        registry = "PoojaMishra084/Certificationproj1" 
 
         registryCredential = 'devopslearner' 
 
-        dockerImage = ' ' 
+        dockerImage = "poojamishra084/addressbook:${tagName}"
 
     }
 
@@ -71,10 +71,10 @@ node{
             
                 echo "Log into the dockerhub and Pushing image"
                 docker.withRegistry( '', registryCredential ) { 
-//                         dockerImage.push() 
+                         dockerImage.push() 
 //                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
 //                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
-                sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
+//                 sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
         }
     
