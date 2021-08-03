@@ -68,10 +68,6 @@ node{
         }
     
         stage("Push Docker Image to DockerHub"){
-                steps{
-                        script
-                            {
-            
                 echo "Log into the dockerhub and Pushing image"
                 docker.withRegistry( '', registryCredential ) { 
                          dockerImage.push() 
@@ -79,8 +75,6 @@ node{
 //                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
 //                 sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
-        }
-          }
         }
     
         stage('Configure Server using Ansible'){
