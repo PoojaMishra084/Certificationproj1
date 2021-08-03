@@ -10,7 +10,7 @@ node{
 
         registry = "poojamishra084/sample" 
 
-        registryCredential = 'devopslearner45' 
+        registryCredential = 'devopslearner' 
 
         dockerImage = ' ' 
 
