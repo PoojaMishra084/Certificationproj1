@@ -75,7 +75,7 @@ node{
 //                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
 //                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
                 sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
-//                 }
+                }
         }
     
         stage('Configure Server using Ansible'){
