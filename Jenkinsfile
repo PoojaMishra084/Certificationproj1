@@ -6,16 +6,6 @@ node{
         def tagName = "3.0"
         def dockerHubPwd = "Edureka@1992"
         
-        environment { 
-
-        registry = "PoojaMishra084/Certificationproj1" 
-
-        registryCredential = 'devopslearner'
-
-        dockerImage = "poojamishra084/addressbook:${tagName}"
-
-    }
-
         stage('Preparation of Jenkins'){
           
                 echo "Setting up the Jenkins environment..."
@@ -66,10 +56,21 @@ node{
                 echo "Building docker image for application ..."
                 sh " sudo ${dockerCMD} build -t poojamishra084/addressbook:${tagName} ."
         }
+        environment { 
+
+        registry = "PoojaMishra084/Certificationproj1" 
+
+        registryCredential = 'devopslearner45'
+
+        dockerImage = "poojamishra084/addressbook:${tagName}"
+
+    }
+
     
         stage("Push Docker Image to DockerHub"){
                 echo "Log into the dockerhub and Pushing image"
                 docker.withRegistry( '', registryCredential ) { 
+                        echo "LoggedIn successfully"
                          dockerImage.push() 
 //                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
 //                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
