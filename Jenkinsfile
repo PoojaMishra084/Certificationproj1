@@ -1,11 +1,11 @@
-        def mavenHome
+
+node("slave"){
+     
+         def mavenHome
         def mavenCMD
         def docker
         def dockerCMD
         def tagName = "3.0"
-pipeline{
-     
-     agent any
         
 //         def dockerHubPwd = "Edureka@1992"
         
@@ -20,13 +20,13 @@ pipeline{
 //     }
      
         stage('Preparation of Jenkins'){
-               steps{
+             
                echo "Setting up the Jenkins environment..."
                 mavenHome = tool name: 'maven-3', type: 'maven'
                 mavenCMD = "${mavenHome}/bin/mvn"
                 docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                 dockerCMD = "$docker/bin/docker"
-               }
+               
         }
 
        stage('git checkout'){
