@@ -20,12 +20,13 @@ pipeline{
 //     }
         
         stage('Preparation of Jenkins'){
-          
-                echo "Setting up the Jenkins environment..."
+               echo "Setting up the Jenkins environment..."
+               steps{
                 mavenHome = tool name: 'maven-3', type: 'maven'
                 mavenCMD = "${mavenHome}/bin/mvn"
                 docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                 dockerCMD = "$docker/bin/docker"
+               }
         }
 
        stage('git checkout'){
