@@ -2,11 +2,14 @@ pipeline{
      
      agent any
         
+     parameters
+     {
         def mavenHome
         def mavenCMD
         def docker
         def dockerCMD
         def tagName = "3.0"
+     }
 //         def dockerHubPwd = "Edureka@1992"
         
 //           environment { 
