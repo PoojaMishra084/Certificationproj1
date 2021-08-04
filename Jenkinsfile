@@ -1,5 +1,5 @@
 node{
-        agent any 
+        agent { label 'slave' }
         
         def mavenHome
         def mavenCMD
