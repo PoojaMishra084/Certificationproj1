@@ -1,4 +1,4 @@
-       def mavenHome
+        def mavenHome
         def mavenCMD
         def docker
         def dockerCMD
@@ -18,7 +18,7 @@ pipeline{
 //         dockerImage = "poojamishra084/addressbook:${tagName}"
 
 //     }
-       stages{
+     
         stage('Preparation of Jenkins'){
                steps{
                echo "Setting up the Jenkins environment..."
@@ -95,6 +95,6 @@ pipeline{
               //  cleanWs()
           
           
-        }
+        
        }
 }
