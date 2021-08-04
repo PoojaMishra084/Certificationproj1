@@ -17,7 +17,6 @@ node{
 //         dockerImage = "poojamishra084/addressbook:${tagName}"
 
 //     }
-  agent any
         
         stage('Preparation of Jenkins'){
           
