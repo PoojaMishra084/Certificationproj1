@@ -6,15 +6,15 @@ node{
         def tagName = "3.0"
 //         def dockerHubPwd = "Edureka@1992"
         
-          environment { 
+//           environment { 
 
-        registry = "PoojaMishra084/Certificationproj1" 
+//         registry = "PoojaMishra084/Certificationproj1" 
 
-        registryCredential = 'devopslearner'
+//         registryCredential = 'devopslearner'
 
-        dockerImage = "poojamishra084/addressbook:${tagName}"
+//         dockerImage = "poojamishra084/addressbook:${tagName}"
 
-    }
+//     }
 
         
         stage('Preparation of Jenkins'){
