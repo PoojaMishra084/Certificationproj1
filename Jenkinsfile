@@ -1,5 +1,5 @@
-pipeline{
-        agent any
+node{
+       
         
         def mavenHome
         def mavenCMD
@@ -17,7 +17,7 @@ pipeline{
 //         dockerImage = "poojamishra084/addressbook:${tagName}"
 
 //     }
-
+  agent any
         
         stage('Preparation of Jenkins'){
           
