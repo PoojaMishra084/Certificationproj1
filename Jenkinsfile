@@ -1,5 +1,5 @@
 node{
-       agent any
+     
         
         def mavenHome
         def mavenCMD
