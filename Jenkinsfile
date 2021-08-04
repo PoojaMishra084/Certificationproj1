@@ -1,5 +1,6 @@
-node{
+pipeline{
      
+     agent any
         
         def mavenHome
         def mavenCMD
