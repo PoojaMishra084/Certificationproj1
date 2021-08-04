@@ -4,7 +4,7 @@ node{
         def docker
         def dockerCMD
         def tagName = "3.0"
-        def dockerHubPwd = "Edureka@1992"
+//         def dockerHubPwd = "Edureka@1992"
         
           environment { 
 
@@ -70,12 +70,12 @@ node{
      
         stage("Push Docker Image to DockerHub"){
                 echo "Log into the dockerhub and Pushing image"
-                docker.withRegistry( '', registryCredential ) { 
-                        echo "LoggedIn successfully"
-                         dockerImage.push() 
-//                 withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
-//                 sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
-//                 sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
+//                 docker.withRegistry( '', registryCredential ) { 
+//                         echo "LoggedIn successfully"
+//                          dockerImage.push() 
+                withCredentials([string(credentialsId: 'dockerPwd', variable: 'dockerHubPwd')]) {
+                sh " sudo ${dockerCMD} login -u poojamishra084 -p ${dockerHubPwd}"
+                sh " sudo ${dockerCMD} push poojamishra084/addressbook:${tagName}"
                 }
         }
     
