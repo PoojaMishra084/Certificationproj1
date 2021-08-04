@@ -18,10 +18,10 @@ pipeline{
 //         dockerImage = "poojamishra084/addressbook:${tagName}"
 
 //     }
-        
+       stages{
         stage('Preparation of Jenkins'){
-               echo "Setting up the Jenkins environment..."
                steps{
+               echo "Setting up the Jenkins environment..."
                 mavenHome = tool name: 'maven-3', type: 'maven'
                 mavenCMD = "${mavenHome}/bin/mvn"
                 docker = tool name: 'docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
@@ -96,4 +96,5 @@ pipeline{
           
           
         }
+       }
 }
