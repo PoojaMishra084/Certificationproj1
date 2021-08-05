@@ -82,19 +82,26 @@ node("slave"){
                 }
         }
     
-        stage('Configure Server using Ansible'){
+//         stage('Configure Server using Ansible'){
           
-              echo 'configuring servers'
-              sh 'ansible-playbook playbook2.yml'
+//               echo 'configuring servers'
+//               sh 'ansible-playbook playbook2.yml'
    
-        }
+//         }
+     
+     stage('Deploy Application'){
+                echo 'Deploying Application on aws Instance'
+               sh "sudo ${dockerCMD} run d -p 8082:8080 --name=addressbook poojamishra084/addressbook:${tagName}"
+//               sshagent(['aws-ubuntu']) {
+//                    sh "ssh -o StrictHostKeyChecking=no ${user}@${ipAddress} ${dockerRun}" 
+               }
+            }  
     
         stage('Workspace Cleanup'){
            
                 echo "Clean the Jenkin Pipeline's workspace..."
               //  cleanWs()
           
-          
-        
+         
        }
 }
