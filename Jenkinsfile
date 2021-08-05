@@ -91,7 +91,7 @@ node("slave"){
      
      stage('Deploy Application'){
                 echo 'Deploying Application on aws Instance'
-               sh "sudo ${dockerCMD} run d -p 8082:8080 --name=poojamishra084/addressbook:${tagName}"
+               sh "sudo ${dockerCMD} run -p 8082:8080 --name=poojamishra084/addressbook:${tagName}"
 //               sshagent(['aws-ubuntu']) {
 //                    sh "ssh -o StrictHostKeyChecking=no ${user}@${ipAddress} ${dockerRun}" 
               // }
