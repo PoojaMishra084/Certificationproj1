@@ -5,7 +5,7 @@ node("slave"){
         def mavenCMD
         def docker
         def dockerCMD
-        def tagName = "5"
+        def tagName = "5.1"
         
      
         stage('Preparation of Jenkins'){
@@ -73,7 +73,7 @@ node("slave"){
      
      stage('Deploy Application'){
                 echo 'Deploying Application on aws instance made as jenkins slave machine'
-               sh "sudo ${dockerCMD} run -p 8082:8080 -d poojamishra084/addressbook:${tagName}"
+               sh "sudo ${dockerCMD} run -p 8083:8080 -d poojamishra084/addressbook:${tagName}"
 //               sshagent(['aws-ubuntu']) {
 //                    sh "ssh -o StrictHostKeyChecking=no ${user}@${ipAddress} ${dockerRun}" 
               // }
