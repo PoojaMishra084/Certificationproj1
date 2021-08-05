@@ -94,7 +94,7 @@ node("slave"){
                sh "sudo ${dockerCMD} run d -p 8082:8080 --name=addressbook poojamishra084/addressbook:${tagName}"
 //               sshagent(['aws-ubuntu']) {
 //                    sh "ssh -o StrictHostKeyChecking=no ${user}@${ipAddress} ${dockerRun}" 
-               }
+              // }
             }  
     
         stage('Workspace Cleanup'){
