@@ -5,7 +5,7 @@ node("slave"){
         def mavenCMD
         def docker
         def dockerCMD
-        def tagName = "3.0"
+        def tagName = "3.1"
         
 //         def dockerHubPwd = "Edureka@1992"
         
@@ -85,7 +85,7 @@ node("slave"){
         stage('Configure Server using Ansible'){
           
               echo 'configuring servers'
-              sh 'ansible-playbook playbook2.yml'
+              sh sudo 'ansible-playbook playbook2.yml'
    
         }
     
