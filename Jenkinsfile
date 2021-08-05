@@ -82,7 +82,7 @@ node("slave"){
         stage('Workspace Cleanup'){
            
                 echo "Clean the Jenkin Pipeline's workspace..."
-              //  cleanWs()
+                cleanWs()
           
          
        }
