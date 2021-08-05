@@ -35,12 +35,12 @@ node("slave"){
         
         stage('Code Coverage Analysis'){
             echo 'running code coverage analysis'
-            sh "${mavenCMD} cobertura:cobertura"
+            sh " sudo ${mavenCMD} cobertura:cobertura"
         }
         
         stage('static code analysis'){
             echo 'running static code analysis'
-           sh "${mavenCMD} pmd:pmd"
+           sh " sudo ${mavenCMD} pmd:pmd"
         }
 
         stage('Publish Report'){
