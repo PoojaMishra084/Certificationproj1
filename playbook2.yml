@@ -1,5 +1,6 @@
 ---
 - hosts: webservers
+  gather_facts: no
   become: yes
   tasks:
   - name: install maven
