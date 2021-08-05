@@ -5,7 +5,7 @@ node("slave"){
         def mavenCMD
         def docker
         def dockerCMD
-        def tagName = "3.1"
+        def tagName = "3.2"
         
 //         def dockerHubPwd = "Edureka@1992"
         
