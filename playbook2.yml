@@ -11,10 +11,10 @@
     apt:
       pkg: tomcat9
       state: present
-  - name: uninstall git
+  - name: install git
     apt:
       pkg: git
-      state: absent
+      state: present
   - name: start tomcat service
     service:
       name: tomcat9
