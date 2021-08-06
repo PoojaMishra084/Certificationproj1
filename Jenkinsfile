@@ -33,22 +33,22 @@ node("slave"){
     
        
         
-        stage('Code Coverage Analysis'){
-            echo 'running code coverage analysis'
-            sh " sudo ${mavenCMD} cobertura:cobertura"
-        }
+//         stage('Code Coverage Analysis'){
+//             echo 'running code coverage analysis'
+//             sh " sudo ${mavenCMD} cobertura:cobertura"
+//         }
         
-        stage('static code analysis'){
-            echo 'running static code analysis'
-           sh " sudo ${mavenCMD} pmd:pmd"
-        }
+//         stage('static code analysis'){
+//             echo 'running static code analysis'
+//            sh " sudo ${mavenCMD} pmd:pmd"
+//         }
 
-        stage('Publish Report'){
+//         stage('Publish Report'){
    
-                echo " Publishing HTML report.."
-               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
+//                 echo " Publishing HTML report.."
+//                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/', reportFiles: 'surefire-report.html', reportName: 'HTML Report', reportTitles: ''])
             
-        }
+//         }
 
         stage('Build Docker Image'){
             
