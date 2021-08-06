@@ -67,7 +67,7 @@ node("slave"){
         stage('Configure Server using Ansible'){
           
               echo 'configuring servers'
-              sh 'ansible-playbook playbook2.yml'
+              sh 'sudo ansible-playbook playbook2.yml'
    
         }
      
